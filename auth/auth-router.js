@@ -30,7 +30,7 @@ router.post('/login', (req, res) => {
         //produce token
         const token = generateToken(user)
 
-        const decoded = jwt.verify(token, jwtSecret)
+        const decoded = jwt.verify(token, secrets.jwtSecret)
         console.log(decoded)
 
         res.status(200).json({
